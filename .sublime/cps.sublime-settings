@@ -7,11 +7,11 @@
   "cps_print_param": {
     "js":{
       "exts":[".js", ".ts", ".vue", ".cjs", ".mjs"],
-      "template":"{indent}console.log('{param}: ', {param})\n",
+      "template":"console.log('{param}: ', {param})\n",
     },
     "py":{
       "exts":[".py", ".pyc"],
-      "template":"{indent}print('{param}: ', {param})\n",
+      "template":"print('{param}: ', {param})\n",
     }
   },
 

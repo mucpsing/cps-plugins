@@ -9,7 +9,7 @@
                 "children": 
                 [{
                     "caption": "Cps Testt test func",
-                    "command": "testt_test"
+                    "command": "cps_test"
                 }]
             },
         ]

@@ -1,10 +1,10 @@
 [
   {
     "keys": ["alt+e"],
-    "command": "testt_open_currt_folder"
+    "command": "cps_open_currt_folder"
   },
     {
     "keys": ["alt+t"],
-    "command": "testt"
+    "command": "cps_test"
   }
 ]

@@ -1,15 +1,15 @@
 [
   {
     "caption": "Cps Print Currt Param",
-    "command": "testt_print_param"
+    "command": "cps_print_param"
   },
   {
     "caption": "Cps Open Project Folder",
-    "command": "testt_open_currt_folder"
+    "command": "cps_open_currt_folder"
   },
   {
     "caption": "Cps Testt test func",
-    "command": "testt_test"
+    "command": "cps_test"
   },
   {
     "id":"cps-plugins",
@@ -28,7 +28,7 @@
           },
           {
             "caption": "Cps Testt test func",
-            "command": "testt_test"
+            "command": "cps_test"
           },
         ]
       }

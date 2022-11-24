@@ -3,8 +3,8 @@ import os, re, sys
 
 sys.path.append(".")
 
-from . import helper
-from . import utils
+from .core import helper
+from .core import utils
 
 PLUGIN_NAME = "cps-plugins"
 SETTINGS_PRINT_PARAM = None
@@ -74,7 +74,7 @@ class SettingManager:
 
 
 def plugin_loaded():
-    print("加载testt插件")
+    print("加载Cps插件")
     global SETTINGS_PRINT_PARAM, DEFAULT_SETTINGS_FILE
     SETTINGS_PRINT_PARAM = SettingManager("cps_print_param", DEFAULT_SETTINGS_FILE)
 
@@ -91,7 +91,7 @@ class CpsTestCommand(sublime_plugin.TextCommand):
 
 
 # 快速打印一个参数
-class TesttPrintParam(sublime_plugin.TextCommand):
+class CpsPrintParam(sublime_plugin.TextCommand):
     def run(self, edit):
         global SETTINGS_PRINT_PARAM
         if not SETTINGS_PRINT_PARAM:
@@ -131,13 +131,13 @@ class TesttPrintParam(sublime_plugin.TextCommand):
                 view.insert(
                     edit,
                     newt_line_start,
-                    insert_tmpl.format(indent=indent, param=select_str),
+                    f"{indent}{insert_tmpl.format(param=select_str)}",
                 )
                 break
 
 
 # 打开当前文件的文件夹
-class TesttOpenCurrtFolder(sublime_plugin.TextCommand):
+class CpsOpenCurrtFolder(sublime_plugin.TextCommand):
     def run(self, edit):
         print("打开当前文件夹")
         # 调用当前激活的窗口来执行 run_command命令(无法使用 self.view 调用 run_command)
@@ -146,7 +146,7 @@ class TesttOpenCurrtFolder(sublime_plugin.TextCommand):
 
 
 # 设置语法
-class TesttSetSyntaxCommand(sublime_plugin.TextCommand):
+class CpsSetSyntaxCommand(sublime_plugin.TextCommand):
     def run(self, edit, syntax):
         syntaxDict = {
             "html": "Packages/HTML/HTML.sublime-syntax",
@@ -158,7 +158,7 @@ class TesttSetSyntaxCommand(sublime_plugin.TextCommand):
 
 
 # 清除所有注释
-# class TesttRemoveCommentsCommand(sublime_plugin.TextCommand):
+# class CpsRemoveCommentsCommand(sublime_plugin.TextCommand):
 #     def run(self, edit):
 #         comments = self.view.find_by_selector("comment")
 #         # 遍历所有注释块
