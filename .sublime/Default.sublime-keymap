@@ -1,0 +1,10 @@
+[
+  {
+    "keys": ["alt+e"],
+    "command": "testt_open_currt_folder"
+  },
+    {
+    "keys": ["alt+t"],
+    "command": "testt"
+  }
+]

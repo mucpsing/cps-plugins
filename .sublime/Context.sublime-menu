@@ -1,0 +1,37 @@
+[
+  {
+    "caption": "Cps Print Currt Param",
+    "command": "testt_print_param"
+  },
+  {
+    "caption": "Cps Open Project Folder",
+    "command": "testt_open_currt_folder"
+  },
+  {
+    "caption": "Cps Testt test func",
+    "command": "testt_test"
+  },
+  {
+    "id":"cps-plugins",
+    "caption": "CPS-Plugins",
+    "children": [
+      {
+        "caption": "Cps Plugins Base",
+        "children": [
+          {
+            "caption": "settings",
+            "command": "cps_edit_setting",
+            "args": {
+              "base_file":"cps.sublime-settings",
+              "package_name":"cps_base"
+            }
+          },
+          {
+            "caption": "Cps Testt test func",
+            "command": "testt_test"
+          },
+        ]
+      }
+    ]
+  }
+]

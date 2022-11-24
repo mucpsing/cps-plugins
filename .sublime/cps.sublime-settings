@@ -1,0 +1,29 @@
+{
+  "name": "cps base",
+  "author": "CPS",
+  "mail": "373704015@qq.com", //本插件任何问题请联系qq
+  "default_workspace":"",
+  
+  "cps_print_param": {
+    "js":{
+      "exts":[".js", ".ts", ".vue", ".cjs", ".mjs"],
+      "template":"{indent}console.log('{param}: ', {param})\n",
+    },
+    "py":{
+      "exts":[".py", ".pyc"],
+      "template":"{indent}print('{param}: ', {param})\n",
+    }
+  },
+
+  "run-commands": {
+    "enable":true,
+    "default_workspace":".",
+    "history_count":500,
+  },
+
+  "auto_update_channel": {
+    "enable":true,
+    "auto_update": true, // 是否更新
+    "update_interval": 7, // 多少天更新一次
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "source.python",
+
+  "completions": [
+  {
+    "trigger": "pr",
+    "contents": "print($1)$2"
+  }]
+}

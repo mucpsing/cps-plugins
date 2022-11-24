@@ -1,0 +1,9 @@
+{
+  "scope": ["*.pug"],
+
+  "completions": [
+  {
+    "trigger": "n",
+    "contents": "`${n}$1`"
+  }]
+}

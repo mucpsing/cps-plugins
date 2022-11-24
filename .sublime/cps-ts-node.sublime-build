@@ -1,0 +1,43 @@
+{
+  "shell_cmd":"ts-node $file",
+  "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+  "encoding": "UTF8",
+  "file_patterns": ["*.ts","*.tsx"],
+  "selector": "source.ts",
+  "variants": [
+    {
+      "name":"ts-node with ESModule on cmd window (16.x.x)",
+      "encoding": "UTF8",
+      "shell_cmd": "start cmd /c \"ts-node --esm $file & pause \"",
+    },
+    {
+      "name":"ts-node/ems with file (14.x.x)",
+      "encoding": "UTF8",
+      "shell_cmd": "node --loader ts-node/esm $file",
+    },
+    {
+      "name":"ts-node/ems with file on cmd window (14.x.x)",
+      "encoding": "UTF8",
+      "shell_cmd": "start cmd /c \"ts-node $file & pause \"",
+    },
+    {
+      "name":"Build Currt File(Global)",
+      "encoding": "UTF8",
+      "shell_cmd": "tsc $file",
+    },
+    {
+      "name":"Build Currt File(Local)",
+      "encoding": "UTF8",
+      "shell_cmd": "npx tsc $file",
+    },
+      {
+      "name":"Build Project(Global)",
+      "encoding": "UTF8",
+      "shell_cmd": "tsc",
+    },
+    {
+      "name":"Build Project(Local)",
+      "encoding": "UTF8",
+      "shell_cmd": "npx tsc",
+    }]
+}

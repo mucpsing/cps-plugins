@@ -1,0 +1,37 @@
+{
+    "scope": "source.js - variable.other.js",
+    "completions": [
+    {
+        "trigger": "eggcontroller",
+        "contents": "const Controller = require('egg').Controller;\nclass ${1:Home}Controller extends Controller {\n  async ${2:index}() {\n    const { ctx, app } = this;\n    ${3:this.ctx.body = 'Hello world';}\n  }\n}\nmodule.exports = ${1:Home}Controller;\n\n"
+    },
+    {
+        "trigger": "eggservice",
+        "contents": "const Service = require('egg').Service\n\nclass ${1:New}Service extends Service{\n    async ${2:name}(){\n    const { ctx } = this;\n      $3\n    }\n    $4\n}\n\nmodule.exports = ${1:New}Service\n "
+
+    },
+    {
+        "trigger": "eggmiddleware",
+        "contents": "module.exports = (options) => {\n  return async function ${1:funcname}(ctx, next) {\n    //接收请求前\n    await next();\n    //请求发送前\n  };\n};\n"
+    },
+    {
+        "trigger": "eggconfig",
+        "contents": "const Controller = require('egg').Controller;\nclass ${1:Home}Controller extends Controller {\n  async index() {\n    ${2:this.ctx.body = 'Hello world'};\n  }\n}\nmodule.exports = ${1:Home}Controller;\n\n$3"
+    },
+    {
+        "trigger": "eggplugin",
+        "contents": "const Controller = require('egg').Controller;\nclass ${1:Home}Controller extends Controller {\n  async index() {\n    ${2:this.ctx.body = 'Hello world'};\n  }\n}\nmodule.exports = ${1:Home}Controller;\n\n$3"
+    },
+    {
+        "trigger": "eggrouter",
+        "contents": "module.exports = (app) => {\n  const { router, controller} = app;\n  router.get('$1'$2, controller.$3);\n};\n"
+    },
+    {
+        "trigger": "eggmongoose",
+        "contents": "module.exports = (app) => {\n  const conn = app.mongooseDB.get('${1:dbname}'$2)$3;$4\n  const mongoose = app.mongoose;\n  const Schema = mongoose.Schema;\n  const ${5:ModelName} = new Schema({\n    \n$7  });\n  return conn.model('${5:outname}', ${5:outname}, '${6:表名}');\n};\n"
+    },
+    {
+        "trigger": "routerget",
+        "contents": "router.get('$1'$2, controller.$3)"
+    }, ]
+}

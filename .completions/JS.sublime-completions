@@ -1,0 +1,13 @@
+{
+  "scope": "source.js",
+  "completions": [
+    {
+      "trigger": "log",
+      "contents": "console.log('$0')"
+    },
+    {
+      "trigger": "dir",
+      "contents": "console.dir('$0')"
+    }
+  ]
+}

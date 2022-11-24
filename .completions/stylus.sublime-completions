@@ -1,0 +1,208 @@
+{
+
+    "scope": "source.stylus, source.vue-stylus.embedded",
+    "completions":
+    [
+       { "trigger": "background\tstyl", "contents": "background ${1:color} url('${2:image}') ${3:position} ${4:repeat}" }
+      ,{ "trigger": "background-size\tstyl", "contents": "background-size ${1:cover}" }
+      ,{ "trigger": "background-image\tstyl", "contents": "background-image url('${1:image}')" }
+      ,{ "trigger": "background-position\tstyl", "contents": "background-position ${1:position} ${2:position}" }
+      ,{ "trigger": "background-repeat\tstyl", "contents": "background-repeat ${1:repeat}" }
+      ,{ "trigger": "background-color\tstyl", "contents": "background-color ${1:color}" }
+      ,{ "trigger": "background-attachment\tstyl", "contents": "background-attachment ${1:fixed}" }
+      ,{ "trigger": "border\tstyl", "contents": "border ${1:width} ${2:style} ${3:color}" }
+      ,{ "trigger": "border-top\tstyl", "contents": "border-top ${1:value}" }
+      ,{ "trigger": "border-bottom\tstyl", "contents": "border-bottom ${1:width} ${2:style} ${3:color}" }
+      ,{ "trigger": "border-right\tstyl", "contents": "border-right ${1:width} ${2:style} ${3:color}" }
+      ,{ "trigger": "border-left\tstyl", "contents": "border-left ${1:width} ${2:style} ${3:color}" }
+      ,{ "trigger": "border-color\tstyl", "contents": "border-color ${1:color}" }
+      ,{ "trigger": "border-radius\tstyl", "contents": "border-radius ${1:radius}" }
+      ,{ "trigger": "box-shadow\tstyl", "contents": "box-shadow ${1:x} ${2:y} ${3:blur} ${4:spread} ${5:color}" }
+      ,{ "trigger": "box-sizing\tstyl", "contents": "box-sizing ${1:border-box}" }
+      ,{ "trigger": "bottom\tstyl", "contents": "bottom ${1:0px}" }
+      ,{ "trigger": "color\tstyl", "contents": "color ${1:color}" }
+      ,{ "trigger": "cursor\tstyl", "contents": "cursor ${1:pointer}" }
+      ,{ "trigger": "clear\tstyl", "contents": "clear ${1:both}" }
+      ,{ "trigger": "display\tstyl", "contents": "display ${1:block}" }
+      ,{ "trigger": "float\tstyl", "contents": "float ${1:left}" }
+      ,{ "trigger": "font-family\tstyl", "contents": "font-family ${1:font}" }
+      ,{ "trigger": "font-size\tstyl", "contents": "font-size ${1:size}" }
+      ,{ "trigger": "font-style\tstyl", "contents": "font-style ${1:italic}" }
+      ,{ "trigger": "font-weight\tstyl", "contents": "font-weight ${1:bold}" }
+      ,{ "trigger": "height\tstyl", "contents": "height ${1:value}" }
+      ,{ "trigger": "left\tstyl", "contents": "left ${1:0px}" }
+      ,{ "trigger": "line-height\tstyl", "contents": "line-height ${1:value}" }
+      ,{ "trigger": "list-style\tstyl", "contents": "list-style ${1:none}" }
+      ,{ "trigger": "margin\tstyl", "contents": "margin ${1:top} ${2:right} ${3:bottom} ${4:left}" }
+      ,{ "trigger": "margin-right\tstyl", "contents": "margin-right ${1:value}" }
+      ,{ "trigger": "margin-top\tstyl", "contents": "margin-top ${1:value}" }
+      ,{ "trigger": "margin-left\tstyl", "contents": "margin-left ${1:value}" }
+      ,{ "trigger": "margin-bottom\tstyl", "contents": "margin-bottom ${1:value}" }
+      ,{ "trigger": "max-height\tstyl", "contents": "max-height ${1:value}" }
+      ,{ "trigger": "max-width\tstyl", "contents": "max-width ${1:value}" }
+      ,{ "trigger": "min-width\tstyl", "contents": "min-width ${1:value}" }
+      ,{ "trigger": "min-height\tstyl", "contents": "min-height ${1:value}" }
+      ,{ "trigger": "opacity\tstyl", "contents": "opacity ${1:value}" }
+      ,{ "trigger": "outline\tstyl", "contents": "outline ${1:none}" }
+      ,{ "trigger": "overflow\tstyl", "contents": "overflow ${1:hidden}" }
+      ,{ "trigger": "overflow-x\tstyl", "contents": "overflow-x ${1:hidden}" }
+      ,{ "trigger": "overflow-y\tstyl", "contents": "overflow-y ${1:hidden}" }
+      ,{ "trigger": "padding\tstyl", "contents": "padding ${1:top} ${2:right} ${3:bottom} ${4:left}" }
+      ,{ "trigger": "padding-right\tstyl", "contents": "padding-right ${1:value}" }
+      ,{ "trigger": "padding-top\tstyl", "contents": "padding-top ${1:value}" }
+      ,{ "trigger": "padding-left\tstyl", "contents": "padding-left ${1:value}" }
+      ,{ "trigger": "padding-bottom\tstyl", "contents": "padding-bottom ${1:value}" }
+      ,{ "trigger": "position\tstyl", "contents": "position ${1:absolute}" }
+      ,{ "trigger": "right\tstyl", "contents": "right ${1:0px}" }
+      ,{ "trigger": "resize\tstyl", "contents": "resize ${1:none}" }
+      ,{ "trigger": "text-align\tstyl", "contents": "text-align ${1:center}" }
+      ,{ "trigger": "text-decoration\tstyl", "contents": "text-decoration ${1:none}" }
+      ,{ "trigger": "text-indent\tstyl", "contents": "text-indent ${1:value}" }
+      ,{ "trigger": "text-overflow\tstyl", "contents": "text-overflow ${1:ellipsis}" }
+      ,{ "trigger": "text-transform\tstyl", "contents": "text-transform ${1:uppercase}" }
+      ,{ "trigger": "text-shadow\tstyl", "contents": "text-shadow ${1:x} ${2:y} ${3:spread} ${4:color}" }
+      ,{ "trigger": "top\tstyl", "contents": "top ${1:0px}" }
+      ,{ "trigger": "transform\tstyl", "contents": "transform ${1:function}" }
+      ,{ "trigger": "transition\tstyl", "contents": "transition ${1:duration} ${2:property} ${3:timing-function}" }
+      ,{ "trigger": "vertical-align\tstyl", "contents": "vertical-align ${1:middle}" }
+      ,{ "trigger": "visibility\tstyl", "contents": "visibility ${1:hidden}" }
+      ,{ "trigger": "white-space\tstyl", "contents": "white-space ${1:nowrap}" }
+      ,{ "trigger": "width\tstyl", "contents": "width ${1:value}" }
+      ,{ "trigger": "word-break\tstyl", "contents": "word-break ${1:break-all}" }
+      ,{ "trigger": "word-wrap\tstyl", "contents": "word-wrap ${1:break-word}" }
+      ,{ "trigger": "z-index\tstyl", "contents": "z-index ${1:value}" }
+      ,{ "trigger": "first-child\tstyl", "contents": "first-child\n\t" }
+      ,{ "trigger": "last-child\tstyl", "contents": "last-child\n\t" }
+      ,{ "trigger": "before\tstyl", "contents": "before\n\tcontent ''" }
+      ,{ "trigger": "after\tstyl", "contents": "after\n\tcontent ''" }
+      ,{ "trigger": "focus\tstyl", "contents": "focus\n\t" }
+      ,{ "trigger": "active\tstyl", "contents": "active\n\t" }
+      ,{ "trigger": "hover\tstyl", "contents": "hover\n\t" }
+      ,{ "trigger": "user-select\tstyl", "contents": "user-select ${1:none}" }
+      ,{ "trigger": "white-space\tstyl", "contents": "white-space ${1:nowrap}" }
+      // css3 properties start TODO need to add most often values
+      ,{ "trigger": "backface-visibility\tstyl", "contents": "backface-visibility ${1:value}" }
+      ,{ "trigger": "background-clip\tstyl", "contents": "background-clip ${1:value}" }
+      ,{ "trigger": "background-origin\tstyl", "contents": "background-origin ${1:value}" }
+      ,{ "trigger": "background-blend-mode\tstyl", "contents": "background-blend-mode ${1:value}" }
+      ,{ "trigger": "border-image\tstyl", "contents": "border-image ${1:value}" }
+      ,{ "trigger": "border-image-outset\tstyl", "contents": "border-image-outset ${1:value}" }
+      ,{ "trigger": "border-image-repeat\tstyl", "contents": "border-image-repeat ${1:value}" }
+      ,{ "trigger": "border-image-slice\tstyl", "contents": "border-image-slice ${1:value}" }
+      ,{ "trigger": "border-image-source\tstyl", "contents": "border-image-source ${1:value}" }
+      ,{ "trigger": "border-image-width\tstyl", "contents": "border-image-width ${1:value}" }
+      ,{ "trigger": "box-align\tstyl", "contents": "box-align ${1:value}" }
+      ,{ "trigger": "box-direction\tstyl", "contents": "box-direction ${1:value}" }
+      ,{ "trigger": "box-flex\tstyl", "contents": "box-flex ${1:value}" }
+      ,{ "trigger": "box-ordinal-group\tstyl", "contents": "box-ordinal-group ${1:value}" }
+      ,{ "trigger": "box-orient\tstyl", "contents": "box-orient ${1:value}" }
+      ,{ "trigger": "box-pack\tstyl", "contents": "box-pack ${1:value}" }
+      ,{ "trigger": "clip-path\tstyl", "contents": "clip-path ${1:value}" }
+      ,{ "trigger": "clip-rule\tstyl", "contents": "clip-rule ${1:value}" }
+      ,{ "trigger": "column-count\tstyl", "contents": "column-count ${1:value}" }
+      ,{ "trigger": "column-fill\tstyl", "contents": "column-fill ${1:value}" }
+      ,{ "trigger": "column-gap\tstyl", "contents": "column-gap ${1:value}" }
+      ,{ "trigger": "column-rule\tstyl", "contents": "column-rule ${1:value}" }
+      ,{ "trigger": "column-rule-color\tstyl", "contents": "column-rule-color ${1:value}" }
+      ,{ "trigger": "column-rule-style\tstyl", "contents": "column-rule-style ${1:value}" }
+      ,{ "trigger": "column-rule-width\tstyl", "contents": "column-rule-width ${1:value}" }
+      ,{ "trigger": "column-span\tstyl", "contents": "column-span ${1:value}" }
+      ,{ "trigger": "column-width\tstyl", "contents": "column-width ${1:value}" }
+      ,{ "trigger": "columns\tstyl", "contents": "columns ${1:value}" }
+      ,{ "trigger": "filter\tstyl", "contents": "filter ${1:value}" }
+      ,{ "trigger": "flex\tstyl", "contents": "flex ${1:value}" }
+      ,{ "trigger": "flex-align\tstyl", "contents": "flex-align ${1:value}" }
+      ,{ "trigger": "flex-basis\tstyl", "contents": "flex-basis ${1:value}" }
+      ,{ "trigger": "flex-direction\tstyl", "contents": "flex-direction ${1:value}" }
+      ,{ "trigger": "flex-flow\tstyl", "contents": "flex-flow ${1:value}" }
+      ,{ "trigger": "flex-grow\tstyl", "contents": "flex-grow ${1:value}" }
+      ,{ "trigger": "flex-item-align\tstyl", "contents": "flex-item-align ${1:value}" }
+      ,{ "trigger": "flex-line-pack\tstyl", "contents": "flex-line-pack ${1:value}" }
+      ,{ "trigger": "flex-order\tstyl", "contents": "flex-order ${1:value}" }
+      ,{ "trigger": "flex-pack\tstyl", "contents": "flex-pack ${1:value}" }
+      ,{ "trigger": "flex-shrink\tstyl", "contents": "flex-shrink ${1:value}" }
+      ,{ "trigger": "flex-wrap\tstyl", "contents": "flex-wrap ${1:value}" }
+      ,{ "trigger": "font-effect\tstyl", "contents": "font-effect ${1:value}" }
+      ,{ "trigger": "font-emphasize\tstyl", "contents": "font-emphasize ${1:value}" }
+      ,{ "trigger": "font-emphasize-position\tstyl", "contents": "font-emphasize-position ${1:value}" }
+      ,{ "trigger": "font-emphasize-style\tstyl", "contents": "font-emphasize-style ${1:value}" }
+      ,{ "trigger": "font-feature-settings\tstyl", "contents": "font-feature-settings ${1:value}" }
+      ,{ "trigger": "font-kerning font-language-override\tstyl", "contents": "font-kerning font-language-override ${1:value}" }
+      ,{ "trigger": "font-stretch\tstyl", "contents": "font-stretch ${1:value}" }
+      ,{ "trigger": "font-synthesis\tstyl", "contents": "font-synthesis ${1:value}" }
+      ,{ "trigger": "font-variant-ligatures\tstyl", "contents": "font-variant-ligatures ${1:value}" }
+      ,{ "trigger": "font-variant-position\tstyl", "contents": "font-variant-position ${1:value}" }
+      ,{ "trigger": "font-variant-caps\tstyl", "contents": "font-variant-caps ${1:value}" }
+      ,{ "trigger": "font-variant-numeric\tstyl", "contents": "font-variant-numeric ${1:value}" }
+      ,{ "trigger": "font-variant-alternates\tstyl", "contents": "font-variant-alternates ${1:value}" }
+      ,{ "trigger": "font-variant-east-asian\tstyl", "contents": "font-variant-east-asian ${1:value}" }
+      ,{ "trigger": "group\tstyl", "contents": "group ${1:value}" }
+      ,{ "trigger": "grid-area\tstyl", "contents": "grid-area ${1:value}" }
+      ,{ "trigger": "grid-auto-columns\tstyl", "contents": "grid-auto-columns ${1:value}" }
+      ,{ "trigger": "grid-auto-flow\tstyl", "contents": "grid-auto-flow ${1:value}" }
+      ,{ "trigger": "grid-auto-rows\tstyl", "contents": "grid-auto-rows ${1:value}" }
+      ,{ "trigger": "grid-column\tstyl", "contents": "grid-column ${1:value}" }
+      ,{ "trigger": "grid-column-end\tstyl", "contents": "grid-column-end ${1:value}" }
+      ,{ "trigger": "grid-column-start\tstyl", "contents": "grid-column-start ${1:value}" }
+      ,{ "trigger": "grid-row\tstyl", "contents": "grid-row ${1:value}" }
+      ,{ "trigger": "grid-row-end\tstyl", "contents": "grid-row-end ${1:value}" }
+      ,{ "trigger": "grid-row-start\tstyl", "contents": "grid-row-start ${1:value}" }
+      ,{ "trigger": "grid-template\tstyl", "contents": "grid-template ${1:value}" }
+      ,{ "trigger": "grid-template-areas\tstyl", "contents": "grid-template-areas ${1:value}" }
+      ,{ "trigger": "grid-template-columns\tstyl", "contents": "grid-template-columns ${1:value}" }
+      ,{ "trigger": "grid-template-rows\tstyl", "contents": "grid-template-rows ${1:value}" }
+      ,{ "trigger": "hyphens\tstyl", "contents": "hyphens ${1:value}" }
+      ,{ "trigger": "inline-flex\tstyl", "contents": "inline-flex ${1:value}" }
+      ,{ "trigger": "isolation\tstyl", "contents": "isolation ${1:value}" }
+      ,{ "trigger": "justify-content\tstyl", "contents": "justify-content ${1:value}" }
+      ,{ "trigger": "mask\tstyl", "contents": "mask ${1:value}" }
+      ,{ "trigger": "mask-border\tstyl", "contents": "mask-border ${1:value}" }
+      ,{ "trigger": "mask-border-mode \tstyl", "contents": "mask-border-mode  ${1:value}" }
+      ,{ "trigger": "mask-border-outset \tstyl", "contents": "mask-border-outset  ${1:value}" }
+      ,{ "trigger": "mask-border-repeat \tstyl", "contents": "mask-border-repeat  ${1:value}" }
+      ,{ "trigger": "mask-border-slice \tstyl", "contents": "mask-border-slice  ${1:value}" }
+      ,{ "trigger": "mask-border-source \tstyl", "contents": "mask-border-source  ${1:value}" }
+      ,{ "trigger": "mask-border-width \tstyl", "contents": "mask-border-width  ${1:value}" }
+      ,{ "trigger": "mask-clip\tstyl", "contents": "mask-clip ${1:value}" }
+      ,{ "trigger": "mask-composite\tstyl", "contents": "mask-composite ${1:value}" }
+      ,{ "trigger": "mask-image\tstyl", "contents": "mask-image ${1:value}" }
+      ,{ "trigger": "mask-mode\tstyl", "contents": "mask-mode ${1:value}" }
+      ,{ "trigger": "mask-origin\tstyl", "contents": "mask-origin ${1:value}" }
+      ,{ "trigger": "mask-position\tstyl", "contents": "mask-position ${1:value}" }
+      ,{ "trigger": "mask-repeat\tstyl", "contents": "mask-repeat ${1:value}" }
+      ,{ "trigger": "mask-size\tstyl", "contents": "mask-size ${1:value}" }
+      ,{ "trigger": "mask-type\tstyl", "contents": "mask-type ${1:value}" }
+      ,{ "trigger": "mix-blend-mode\tstyl", "contents": "mix-blend-mode ${1:value}" }
+      ,{ "trigger": "order\tstyl", "contents": "order ${1:value}" }
+      ,{ "trigger": "outline-offset\tstyl", "contents": "outline-offset ${1:value}" }
+      ,{ "trigger": "overflow-scrolling\tstyl", "contents": "overflow-scrolling ${1:value}" }
+      ,{ "trigger": "overflow-wrap\tstyl", "contents": "overflow-wrap ${1:value}" }
+      ,{ "trigger": "perspective\tstyl", "contents": "perspective ${1:value}" }
+      ,{ "trigger": "perspective-origin\tstyl", "contents": "perspective-origin ${1:value}" }
+      ,{ "trigger": "transform-origin\tstyl", "contents": "transform-origin ${1:value}" }
+      ,{ "trigger": "transform-style\tstyl", "contents": "transform-style ${1:value}" }
+      ,{ "trigger": "transition\tstyl", "contents": "transition ${1:value}" }
+      ,{ "trigger": "transition-delay\tstyl", "contents": "transition-delay ${1:value}" }
+      ,{ "trigger": "transition-duration\tstyl", "contents": "transition-duration ${1:value}" }
+      ,{ "trigger": "transition-property\tstyl", "contents": "transition-property ${1:value}" }
+      ,{ "trigger": "transition-timing-function\tstyl", "contents": "transition-timing-function ${1:value}" }
+      ,{ "trigger": "shape-image-threshold\tstyl", "contents": "shape-image-threshold ${1:value}" }
+      ,{ "trigger": "shape-margin\tstyl", "contents": "shape-margin ${1:value}" }
+      ,{ "trigger": "shape-outside\tstyl", "contents": "shape-outside ${1:value}" }
+      ,{ "trigger": "tab-size\tstyl", "contents": "tab-size ${1:value}" }
+      ,{ "trigger": "text-align-last\tstyl", "contents": "text-align-last ${1:value}" }
+      ,{ "trigger": "text-emphasis\tstyl", "contents": "text-emphasis ${1:value}" }
+      ,{ "trigger": "text-overflow\tstyl", "contents": "text-overflow ${1:value}" }
+      ,{ "trigger": "text-size-adjust\tstyl", "contents": "text-size-adjust ${1:value}" }
+      ,{ "trigger": "unicode-range\tstyl", "contents": "unicode-range ${1:value}" }
+      ,{ "trigger": "word-break\tstyl", "contents": "word-break ${1:value}" }
+      ,{ "trigger": "behavior\tstyl", "contents": "behavior ${1:value}" }
+      ,{ "trigger": "-webkit-font-smoothing\tstyl", "contents": "-webkit-font-smoothing ${1:value}" }
+      ,{ "trigger": "-moz-osx-font-smoothing\tstyl", "contents": "-moz-osx-font-smoothing ${1:value}" }
+      ,{ "trigger": "-webkit-text-fill-color\tstyl", "contents": "-webkit-text-fill-color ${1:value}" }
+      ,{ "trigger": "interpolation-mode\tstyl", "contents": "interpolation-mode ${1:value}" }
+      ,{ "trigger": "line-clamp\tstyl", "contents": "line-clamp ${1:value}" }
+      ,{ "trigger": "-ms-writing-mode\tstyl", "contents": "-ms-writing-mode ${1:value}" }
+    ]
+
+}

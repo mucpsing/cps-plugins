@@ -1,0 +1,13 @@
+{
+    "scope": "source.vbs",
+
+    "completions":
+    [
+      { "trigger": "“", "contents": "\"$1\"$2"},
+      { "trigger": "”", "contents": "\"$1\"$2"},
+      { "trigger": "tr", "contents":"TracePrint \"$1\"$2"},
+      { "trigger": "sel", "contents":"select case $1\n    case $2\n        $3\n    case else\nend select\n"},
+      { "trigger": "function", "contents":"function $1($2)\n    $3\nend function\n"},
+      { "trigger": "if", "contents":"if $1 then\n    $2\nend if\n"},
+    ]
+}
