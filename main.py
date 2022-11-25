@@ -33,13 +33,13 @@ class SettingManager:
 
         sublime.set_timeout_async(self.plugin_loaded_async)
 
-    def __getitem__(self, key: str, default=None):
+    def __getitem__(self, key: str, default={}):
         if key in self.data:
             return self.data.get(key, default)
         else:
-            return None
+            return {}
 
-    def get(self, key: str, default=None):
+    def get(self, key: str, default={}):
         return self.__getitem__(key, default)
 
     def plugin_loaded_async(self):
