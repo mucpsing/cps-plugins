@@ -26,15 +26,14 @@ class SettingManager:
 
         sublime.set_timeout_async(self.plugin_loaded_async)
 
-    def __getitem__(self, target):
-        if target in self.data:
-            return self.data[target]
+    def __getitem__(self, key):
+        if key in self.data:
+            return self.data[key]
         else:
             print(self.data)
 
     def get_setting_file_path(self) -> dict:
         return {
-            "user_path": os.path.join(sublime.packages_path(), "User"),
             "default_settings": os.path.join(
                 sublime.packages_path(), __package__, ".sublime", self.default_settings
             ),
@@ -47,14 +46,21 @@ class SettingManager:
         """
         @Description 监听用户配置文件
         """
+        default_settings_obj = {}
+        user_settings_obj = {}
         with open(self.file_paths["default_settings"], "r", encoding="utf8") as f:
+            default_settings_obj = sublime.decode_value(f.read()).get(
+                self.package_name, {}
+            )
 
-            self.data = sublime.decode_value(f.read()).get(self.package_name, {})
+        with open(self.file_paths["user_settings"], "r", encoding="utf8") as f:
+            user_settings_obj = sublime.decode_value(f.read()).get(
+                self.package_name, {}
+            )
 
-            if len(list(self.data.keys())) == 0:
-                raise Exception(
-                    "读取配置失败 ~~~ 请确保一下文件真实存在： ", self.file_paths["default_settings"]
-                )
+        if not bool(default_settings_obj and user_settings_obj):
+            print(__package__, "配置文件读取异常")
+            return
 
         user_settings = sublime.load_settings(self.default_settings)
         utils.recursive_update(self.data, user_settings.to_dict()[self.package_name])
@@ -63,14 +69,9 @@ class SettingManager:
     def _on_settings_change(self):
         tmp = sublime.load_settings(self.default_settings).get(self.package_name, None)
 
-        if not tmp or not isinstance(tmp, dict):
-            return
-
         utils.recursive_update(self.data, tmp)
 
-        print("count: ", self.data)
-
-        return
+        return self
 
 
 def plugin_loaded():
@@ -155,15 +156,6 @@ class CpsSetSyntaxCommand(sublime_plugin.TextCommand):
         }
         if syntax:
             self.view.set_syntax_file(syntaxDict[syntax])
-
-
-# 清除所有注释
-# class CpsRemoveCommentsCommand(sublime_plugin.TextCommand):
-#     def run(self, edit):
-#         comments = self.view.find_by_selector("comment")
-#         # 遍历所有注释块
-#         for region in reversed(comments):
-#             self.view.erase(edit, region)
 
 
 # 打开配置文件

@@ -1,6 +1,5 @@
 {
-  "scope": ["*.pug"],
-
+  "scope": "*.pug",
   "completions": [
   {
     "trigger": "n",
