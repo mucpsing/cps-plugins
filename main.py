@@ -2,12 +2,13 @@ import sublime, sublime_plugin
 import os, re, sys
 
 sys.path.append(".")
-
+from os import path
 from .core import helper
 from .core import utils
 
 PLUGIN_NAME = "cps-plugins"
-SETTINGS_PRINT_PARAM = None
+SETTING_KEY = "cps_print_param"
+SETTINGS_PRINT_PARAM = {}
 DEFAULT_SETTINGS_FILE = "cps.sublime-settings"
 
 
@@ -15,69 +16,54 @@ if int(sublime.version()) < 3176:
     raise ImportWarning("本插件不支持当前版本，请使用大于等于3176的sublime Text")
 
 
+def plugin_loaded():
+    global SETTINGS_PRINT_PARAM, DEFAULT_SETTINGS_FILE, SETTING_KEY
+    SETTINGS_PRINT_PARAM = SettingManager(SETTING_KEY, DEFAULT_SETTINGS_FILE)
+
+
 class SettingManager:
-    def __init__(self, package_name: str, default_settings: str):
-        self.package_name = package_name
+    def __init__(self, setting_key: str, default_settings: str):
+        self.setting_key = setting_key
         self.default_settings = default_settings
+        self.default_settings_path = os.path.join(
+            sublime.packages_path(), "cps-plugins", ".sublime", default_settings
+        )
 
         self.data = {}
 
-        self.file_paths = self.get_setting_file_path()
-
         sublime.set_timeout_async(self.plugin_loaded_async)
 
-    def __getitem__(self, key):
+    def __getitem__(self, key: str, default=None):
         if key in self.data:
-            return self.data[key]
+            return self.data.get(key, default)
         else:
-            print(self.data)
+            return None
 
-    def get_setting_file_path(self) -> dict:
-        return {
-            "default_settings": os.path.join(
-                sublime.packages_path(), __package__, ".sublime", self.default_settings
-            ),
-            "user_settings": os.path.join(
-                sublime.packages_path(), "User", self.default_settings
-            ),
-        }
+    def get(self, key: str, default=None):
+        return self.__getitem__(key, default)
 
     def plugin_loaded_async(self):
         """
         @Description 监听用户配置文件
         """
-        default_settings_obj = {}
-        user_settings_obj = {}
-        with open(self.file_paths["default_settings"], "r", encoding="utf8") as f:
-            default_settings_obj = sublime.decode_value(f.read()).get(
-                self.package_name, {}
-            )
+        with open(self.default_settings_path, "r", encoding="utf8") as f:
+            self.data = sublime.decode_value(f.read()).get(self.setting_key, {})
 
-        with open(self.file_paths["user_settings"], "r", encoding="utf8") as f:
-            user_settings_obj = sublime.decode_value(f.read()).get(
-                self.package_name, {}
-            )
-
-        if not bool(default_settings_obj and user_settings_obj):
-            print(__package__, "配置文件读取异常")
-            return
-
+        # 读取现有配置
         user_settings = sublime.load_settings(self.default_settings)
-        utils.recursive_update(self.data, user_settings.to_dict()[self.package_name])
+        # 添加配置更新事件
         user_settings.add_on_change(self.default_settings, self._on_settings_change)
+        # 将最新的配置更新到内部的data，最终以data为准
+        utils.recursive_update(self.data, user_settings.to_dict()[self.setting_key])
 
     def _on_settings_change(self):
-        tmp = sublime.load_settings(self.default_settings).get(self.package_name, None)
+        new_settings = sublime.load_settings(self.default_settings).get(
+            self.setting_key, {}
+        )
 
-        utils.recursive_update(self.data, tmp)
+        utils.recursive_update(self.data, new_settings)
 
         return self
-
-
-def plugin_loaded():
-    print("加载Cps插件")
-    global SETTINGS_PRINT_PARAM, DEFAULT_SETTINGS_FILE
-    SETTINGS_PRINT_PARAM = SettingManager("cps_print_param", DEFAULT_SETTINGS_FILE)
 
 
 class CpsTestCommand(sublime_plugin.TextCommand):
