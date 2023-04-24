@@ -93,7 +93,59 @@
       ]
     },
 
+    "javascript":{
+      "comments_contexts":{
+        "Description":"@Description - {description}\n",
+        "param":"@param {type} {name}  - {description}",
+        "returns":"\n@returns {type} - {description}"
+      },
+      "comments_header": [
+        "/**",       
+        " * ",       
+        " */"        
+      ]
+    },
+
+    "typescript":{
+      "comments_contexts":{
+        "Description":"@Description - {description}\n",
+        "param":"@param {type} {name}  - {description}",
+        "returns":"\n@returns {type} - {description}"
+      },
+      "comments_header": [
+        "/**",       
+        " * ",       
+        " */"        
+      ]
+    },
+
     "js":{ 
+      "comments_contexts":{
+        "Description":"@Description - {description}\n",
+        "param":"@param {type} {name}  - {description}",
+        "returns":"\n@returns {type} - {description}"
+      },
+      "comments_header": [
+        "/**",       
+        " * ",       
+        " */"        
+      ]
+    },
+
+    "cts":{
+      "comments_contexts":{
+        "Description":"@Description - {description}\n",
+        "param":"@param {type} {name}  - {description}",
+        "returns":"\n@returns {type} - {description}"
+      },
+      "comments_header": [
+        "/**",       
+        " * ",       
+        " */"        
+      ]
+    },
+
+    "mts":{
       "comments_contexts":{
         "Description":"@Description - {description}\n",
         "param":"@param {type} {name}  - {description}",
