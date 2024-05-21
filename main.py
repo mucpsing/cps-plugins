@@ -25,9 +25,7 @@ class SettingManager:
     def __init__(self, setting_key: str, default_settings: str):
         self.setting_key = setting_key
         self.default_settings = default_settings
-        self.default_settings_path = os.path.join(
-            sublime.packages_path(), "cps-plugins", ".sublime", default_settings
-        )
+        self.default_settings_path = os.path.join(sublime.packages_path(), "cps-plugins", ".sublime", default_settings)
 
         self.data = {}
 
@@ -57,9 +55,7 @@ class SettingManager:
         utils.recursive_update(self.data, user_settings.to_dict()[self.setting_key])
 
     def _on_settings_change(self):
-        new_settings = sublime.load_settings(self.default_settings).get(
-            self.setting_key, {}
-        )
+        new_settings = sublime.load_settings(self.default_settings).get(self.setting_key, {})
 
         utils.recursive_update(self.data, new_settings)
 
@@ -150,11 +146,48 @@ class CpsEditSettingCommand(sublime_plugin.TextCommand):
         sublime.active_window().run_command(
             "edit_settings",
             {
-                "base_file": os.path.join(
-                    sublime.packages_path(), __package__, ".sublime", base_file
-                ),
-                "default": '{\n  "'
-                + package_name
-                + '":{\n    /*请在插件名称内选项内添加自定义配置*/\n    \n  }\n}',
+                "base_file": os.path.join(sublime.packages_path(), __package__, ".sublime", base_file),
+                "default": '{\n  "' + package_name + '":{\n    /*请在插件名称内选项内添加自定义配置*/\n    \n  }\n}',
             },
         )
+
+
+# 去除当前打开的py文件注释
+class RemoveCommentsCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        # 获取当前文件的语法
+        syntax = self.view.settings().get("syntax").lower()
+
+        # 检查语法是否为 Python
+        if "python" in syntax or utils.is_python():
+            # 获取文件内容
+            full_content = self.view.substr(sublime.Region(0, self.view.size()))
+
+            # 按行分割文件内容
+            lines = full_content.split("\n")
+
+            # 获取第一行
+            first_line = lines[0]
+
+            # 去除除第一行以外的所有注释
+            new_lines = [first_line] + [line for line in lines[1:] if not line.strip().startswith("#")]
+
+            # 将修改后的内容写回文件
+            new_content = "\n".join(new_lines)
+            self.view.replace(edit, sublime.Region(0, self.view.size()), new_content)
+
+
+class RemoveCommentsEventListener(sublime_plugin.EventListener):
+    def on_context_menu(self, context, menu):
+        print(123)
+        # 如果右键菜单的上下文包含 "text" 类型，表示右键的是文本内容
+        if "text" in context:
+            # 获取当前视图
+            view = sublime.active_window().active_view()
+
+            # 获取当前文件的语法
+            syntax = view.settings().get("syntax")
+
+            # 如果语法为 Python，添加 "Remove Comments" 菜单项
+            if "Python" in syntax:
+                menu.append("Remove Comments", {"command": "remove_comments"})
