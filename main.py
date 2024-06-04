@@ -1,8 +1,20 @@
-import sublime, sublime_plugin
-import os, re, sys
+# -*- coding: utf-8 -*-
+#
+# @Author: CPS
+# @email: 373704015@qq.com
+# @Date:
+# @Last Modified by: CPS
+# @Last Modified time: 2024-06-04 15:27:51.767280
+# @file_path "W:\CPS\IDE\SublimeText\JS_SublmieText\Data\Packages\cps-plugins"
+# @Filename "main.py"
+# @Description: 自用插件，与本人开发的其他插件作为配置形式存在
+#
 
-sys.path.append(".")
-from os import path
+
+import sublime, sublime_plugin
+import os, re
+
+
 from .core import helper
 from .core import utils
 
@@ -13,7 +25,7 @@ DEFAULT_SETTINGS_FILE = "cps.sublime-settings"
 
 
 if int(sublime.version()) < 3176:
-    raise ImportWarning("本插件不支持当前版本，请使用大于等于3176的sublime Text")
+    raise ImportWarning("This plugin does not support the current version. Please use sublime Text 3176 or later")
 
 
 def plugin_loaded():
@@ -42,16 +54,17 @@ class SettingManager:
 
     def plugin_loaded_async(self):
         """
-        @Description 监听用户配置文件
+        @Description Listening to user configuration files
         """
         with open(self.default_settings_path, "r", encoding="utf8") as f:
             self.data = sublime.decode_value(f.read()).get(self.setting_key, {})
 
-        # 读取现有配置
+        # Reading existing configurations
         user_settings = sublime.load_settings(self.default_settings)
-        # 添加配置更新事件
+        # Adding configuration update events
         user_settings.add_on_change(self.default_settings, self._on_settings_change)
         # 将最新的配置更新到内部的data，最终以data为准
+        # Updating the latest configuration to the internal data, and ultimately relying on the data as the final authority
         utils.recursive_update(self.data, user_settings.to_dict()[self.setting_key])
 
     def _on_settings_change(self):
@@ -65,7 +78,7 @@ class SettingManager:
 class CpsTestCommand(sublime_plugin.TextCommand):
     def run(self, edit, str: str = ""):
         view = self.view
-        # 获取当前行
+        # get currt line
         print(helper.get_currt_selection(view))
 
         windows = sublime.active_window()
@@ -73,7 +86,7 @@ class CpsTestCommand(sublime_plugin.TextCommand):
         print(sublime.open_dialog(lambda x: x))
 
 
-# 快速打印一个参数
+# print a variable
 class CpsPrintParam(sublime_plugin.TextCommand):
     def run(self, edit):
         global SETTINGS_PRINT_PARAM
@@ -179,15 +192,15 @@ class RemoveCommentsCommand(sublime_plugin.TextCommand):
 
 class RemoveCommentsEventListener(sublime_plugin.EventListener):
     def on_context_menu(self, context, menu):
-        print(123)
         # 如果右键菜单的上下文包含 "text" 类型，表示右键的是文本内容
         if "text" in context:
             # 获取当前视图
             view = sublime.active_window().active_view()
 
             # 获取当前文件的语法
-            syntax = view.settings().get("syntax")
+            if view:
+                syntax = view.settings().get("syntax")
 
-            # 如果语法为 Python，添加 "Remove Comments" 菜单项
-            if "Python" in syntax:
-                menu.append("Remove Comments", {"command": "remove_comments"})
+                # 如果语法为 Python，添加 "Remove Comments" 菜单项
+                if "Python" in syntax:
+                    menu.append("Remove Comments", {"command": "remove_comments"})
