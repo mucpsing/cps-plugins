@@ -20,5 +20,21 @@
       "name": "poetry run (外部调用)",
       "shell_cmd": "start cmd /c \"poetry run python ${file} & timeout /t 10\""
     },
+    {
+      "name": "pdm run (内部调用)",
+      "cmd": ["pdm","run","python", "${file}"],
+    },
+    {
+      "name": "pdm run (外部调用)",
+      "shell_cmd": "start cmd /c \"pdm run python ${file} & timeout /t 10\""
+    },
+    {
+      "name": "ArcMap py2.7 (内部调用)",
+      "cmd": ["C:/Python27/ArcGIS10.2/python.exe", "${file}"],
+    },
+    {
+      "name": "ArcMap py2.7 (外部调用)",
+      "shell_cmd": "start cmd /c \"C:/Python27/ArcGIS10.2/python.exe ${file} & timeout /t 10\""
+    },
   ]
 }

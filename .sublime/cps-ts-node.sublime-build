@@ -8,12 +8,12 @@
     {
       "name":"local ts-node",
       "encoding": "UTF8",
-      "shell_cmd": "start cmd /c \"npx ts-node --esm $file & pause \"",
+      "shell_cmd": "start cmd /c \"npx ts-node --esm $file & pause\"",
     },
     {
       "name":"ts-node with ESModule on cmd window (16.x.x)",
       "encoding": "UTF8",
-      "shell_cmd": "start cmd /c \"npxts-node --esm $file & pause \"",
+      "shell_cmd": "start cmd /c \"npxts-node --esm $file & timeout /t 30 \"",
     },
     {
       "name":"ts-node/ems with file (14.x.x)",
@@ -23,7 +23,7 @@
     {
       "name":"ts-node/ems with file on cmd window (14.x.x)",
       "encoding": "UTF8",
-      "shell_cmd": "start cmd /c \"ts-node $file & pause \"",
+      "shell_cmd": "start cmd /c \"ts-node $file & timeout /t 30 \"",
     },
     {
       "name":"Build Currt File(Global)",
