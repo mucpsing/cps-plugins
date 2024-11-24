@@ -1,10 +1,15 @@
 {
-  "cmd": ["python", "$file"],
+  "cmd": [
+    "python",
+    "$file"
+  ],
   "file_regex": "^[ ]*File \"(...*?)\",line ([0-9]*)",
   "env": {
     "PYTHONIOENCODING": "utf-8"
   },
-  "file_patterns": ["*.py"],
+  "file_patterns": [
+    "*.py"
+  ],
   "encoding": "utf-8",
   "selector": "source.python",
   "variants": [
@@ -14,7 +19,12 @@
     },
     {
       "name": "poetry run (内部调用)",
-      "cmd": ["poetry","run","python", "${file}"],
+      "cmd": [
+        "poetry",
+        "run",
+        "python",
+        "${file}"
+      ],
     },
     {
       "name": "poetry run (外部调用)",
@@ -22,7 +32,12 @@
     },
     {
       "name": "pdm run (内部调用)",
-      "cmd": ["pdm","run","python", "${file}"],
+      "cmd": [
+        "pdm",
+        "run",
+        "python",
+        "${file}"
+      ],
     },
     {
       "name": "pdm run (外部调用)",
@@ -30,11 +45,36 @@
     },
     {
       "name": "ArcMap py2.7 (内部调用)",
-      "cmd": ["C:/Python27/ArcGIS10.2/python.exe", "${file}"],
+      "cmd": [
+        "C:/Python27/ArcGIS10.2/python.exe",
+        "${file}"
+      ],
     },
     {
       "name": "ArcMap py2.7 (外部调用)",
       "shell_cmd": "start cmd /c \"C:/Python27/ArcGIS10.2/python.exe ${file} & timeout /t 10\""
     },
+    {
+      "name": "office Python3.10_64x-inside",
+      "cmd": [
+        "W:/CPS/python/python310_64/python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "office Python3.10_64x",
+      "shell_cmd": "start cmd /c \"W:/CPS/python/python310_64/python.exe ${file} & timeout /t 10\""
+    },
+    {
+      "name": "office Python3.75_64x-inside",
+      "cmd": [
+        "W:/CPS/python/Python375_64/python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "office Python3.75_64x",
+      "shell_cmd": "start cmd /c \"W:/CPS/python/Python375_64/python.exe ${file} & timeout /t 10\""
+    }
   ]
 }
