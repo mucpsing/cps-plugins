@@ -35,6 +35,22 @@
     {
       "name": "ArcGIS Python2.7",
       "shell_cmd": "start cmd /c \"C:/Python27/ArcGIS10.2/python.exe ${file} & timeout /t 10\""
+    },
+    {
+      "name": "Local Python3.10_64x-inside",
+      "cmd": ["W:/CPS/python/python310_64/python.exe","${file}"]
+    },
+    {
+      "name": "Local Python3.10_64x",
+      "shell_cmd": "start cmd /c \"W:/CPS/python/python310_64/python.exe ${file} & timeout /t 10\""
+    },
+    {
+      "name": "Local Python3.75_64x-inside",
+      "cmd": ["W:/CPS/python/Python375_64/python.exe","${file}"]
+    },
+    {
+      "name": "Local Python3.75_64x",
+      "shell_cmd": "start cmd /c \"W:/CPS/python/Python375_64/python.exe ${file} & timeout /t 10\""
     }
   ]
 }
