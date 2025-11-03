@@ -1,23 +1,38 @@
 {
-  "cmd": ["node", "$file"],
+  "cmd": [
+    "node",
+    "$file"
+  ],
   "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
   "encoding": "UTF8",
-  "file_patterns": ["*.js", "*.cjs", "*.mjs"],
+  "file_patterns": [
+    "*.js",
+    "*.cjs",
+    "*.mjs",
+    "*.ts"
+  ],
   "selector": "source.js",
   "variants": [
     {
-      "name":"node(外部调用)",
+      "name": "node(外部调用)",
       "encoding": "UTF8",
       "shell_cmd": "start cmd /c \"node ${file} & pause \""
     },
     {
-      "name":"node --experimental-specifier-resolution=node",
+      "name": "node --experimental-specifier-resolution=node",
       "encoding": "UTF8",
-      "cmd": ["node", "--experimental-specifier-resolution=node","$file"]
+      "cmd": [
+        "node",
+        "--experimental-specifier-resolution=node",
+        "$file"
+      ]
     },
     {
       "name": "v16.11.1(内部调用)",
-      "cmd": ["D:\\CPS\\nodejs\\v16.11.1\\node.exe", "${file}"],
+      "cmd": [
+        "D:\\CPS\\nodejs\\v16.11.1\\node.exe",
+        "${file}"
+      ],
       "encoding": "UTF8"
     },
     {
@@ -27,11 +42,20 @@
     },
     {
       "name": "v16.11.1(内部调用 ES6)",
-      "cmd": ["D:\\CPS\\nodejs\\v16.11.1\\node.exe", "--experimental-modules", "${file}"],
+      "cmd": [
+        "D:\\CPS\\nodejs\\v16.11.1\\node.exe",
+        "--experimental-modules",
+        "${file}"
+      ],
       "encoding": "UTF8"
     },
     {
-      "cmd": ["taskkill", "/IM", "node.exe", "/F"],
+      "cmd": [
+        "taskkill",
+        "/IM",
+        "node.exe",
+        "/F"
+      ],
       "encoding": "UTF8",
       "name": "清除所有node进程"
     },
