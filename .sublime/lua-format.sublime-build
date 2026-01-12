@@ -1,0 +1,23 @@
+{
+  "file_regex": "^[ ]*File \"(...*?)\",line ([0-9]*)",
+  "file_patterns": [
+    "*.lua"
+  ],
+  "encoding": "utf-8",
+  "selector": "source.lua",
+  "variants": [
+    {
+      "name": "lua format by stylua",
+      "shell_cmd": "\"D:/CPS/bin/lua/stylua.exe\" --config-path \"D:/CPS/bin/lua/stylua.config.toml\" $file"
+    },
+    {
+      "name": "lua format by stylua(内部调用)",
+      "cmd": [
+        "D:/CPS/bin/lua/stylua.exe",
+        "--config-path",
+        "D:/CPS/bin/lua/stylua.config.toml",
+        "${file}"
+      ],
+    },
+  ]
+}

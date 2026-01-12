@@ -1,0 +1,146 @@
+{
+  "cmd": [
+    "python",
+    "$file"
+  ],
+  "file_regex": "^[ ]*File \"(...*?)\",line ([0-9]*)",
+  "env": {
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "file_patterns": [
+    "*.py"
+  ],
+  "encoding": "utf-8",
+  "selector": "source.python",
+  "variants": [
+    {
+      "name": "python(output side)",
+      "shell_cmd": "start cmd /c \"chcp 65001 & python ${file} & timeout /t 10 \""
+    },
+    {
+      "name": "poetry run (内部调用)",
+      "cmd": [
+        "poetry",
+        "run",
+        "python",
+        "${file}"
+      ]
+    },
+    {
+      "name": "poetry run (外部调用)",
+      "shell_cmd": "start cmd /c \"poetry run python ${file} & timeout /t 10\""
+    },
+    {
+      "name": "pdm run (内部调用)",
+      "cmd": [
+        "pdm",
+        "run",
+        "python",
+        "${file}"
+      ]
+    },
+    {
+      "name": "pdm run (外部调用)",
+      "shell_cmd": "start cmd /c \"pdm run python ${file} & timeout /t 10\""
+    },
+    {
+      "name": "ArcMap py2.7 (内部调用)",
+      "cmd": [
+        "C:/Python27/ArcGIS10.2/python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "ArcMap py2.7 (外部调用)",
+      "shell_cmd": "start cmd /c \"C:/Python27/ArcGIS10.2/python.exe ${file} & timeout /t 10\""
+    },
+    {
+      "name": "Python27_32-inside",
+      "cmd": [
+        "D:\\CPS\\python\\Python27_32\\python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "Python27_32",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"D:\\CPS\\python\\Python27_32\\python.exe\" ${file} & timeout /t 10 \""
+    },
+    {
+      "name": "Python312-inside",
+      "cmd": [
+        "D:\\CPS\\python\\Python312\\python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "Python312",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"D:\\CPS\\python\\Python312\\python.exe\" ${file} & timeout /t 10 \""
+    },
+    {
+      "name": "Python379-inside",
+      "cmd": [
+        "D:\\CPS\\python\\Python379\\python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "Python379",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"D:\\CPS\\python\\Python379\\python.exe\" ${file} & timeout /t 10 \""
+    },
+    {
+      "name": "Python3810-inside",
+      "cmd": [
+        "D:\\CPS\\python\\Python3810\\python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "Python3810",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"D:\\CPS\\python\\Python3810\\python.exe\" ${file} & timeout /t 10 \""
+    },
+    {
+      "name": "Python_3_10_2_x64_green-inside",
+      "cmd": [
+        "D:\\CPS\\python\\Python_3.10.2_x64_green\\python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "Python_3_10_2_x64_green",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"D:\\CPS\\python\\Python_3.10.2_x64_green\\python.exe\" ${file} & timeout /t 10 \""
+    },
+    {
+      "name": "Python_3_10_6_green-inside",
+      "cmd": [
+        "D:\\CPS\\python\\Python_3.10.6_green\\python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "Python_3_10_6_green",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"D:\\CPS\\python\\Python_3.10.6_green\\python.exe\" ${file} & timeout /t 10 \""
+    },
+    {
+      "name": "Python_3_12_10-inside",
+      "cmd": [
+        "D:\\CPS\\python\\Python_3.12.10\\python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "Python_3_12_10",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"D:\\CPS\\python\\Python_3.12.10\\python.exe\" ${file} & timeout /t 10 \""
+    },
+    {
+      "name": "Python_3_13_9-inside",
+      "cmd": [
+        "D:\\CPS\\python\\Python_3.13.9\\python.exe",
+        "${file}"
+      ]
+    },
+    {
+      "name": "Python_3_13_9",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"D:\\CPS\\python\\Python_3.13.9\\python.exe\" ${file} & timeout /t 10 \""
+    }
+  ]
+}
