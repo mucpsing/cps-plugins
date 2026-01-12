@@ -6,12 +6,13 @@
   
   "cps_print_param": {
     "js":{
-      "exts":[".js", ".ts", ".vue", ".cjs", ".mjs", ".mts",".cts"],
+      "exts":[".js", ".ts", ".vue", ".cjs", ".mjs", ".mts",".cts", ".html"],
       "template":"console.log('{param}: ', {param})\n",
     },
     "py":{
       "exts":[".py", ".pyc"],
       "template":"print('{param}: ', {param})\n",
+      "offsetTab":4,
     }
   },
 
@@ -21,6 +22,8 @@
     "history_count":500,
     "mode_scripts_enable":true, // 读取py和node项目的script字段
     "mode_scripts_run_in_new_shell":true, // 脚本通过独立的shell运行，不阻塞sublimetext
+    "shell_type":"cmd", // cmd | bash
+    "shell_path":"", // (windows)， 需要填写绝对路径
   },
 
   "auto_update_channel": {

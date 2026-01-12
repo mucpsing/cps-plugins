@@ -1,0 +1,24 @@
+{
+  "cmd": ["W:/CPS/bin/lua/lua-5.4.2_Win64_bin/lua54.exe", "$file"],
+  "file_regex": "^[ ]*File \"(...*?)\",line ([0-9]*)",
+  "file_patterns": [
+    "*.lua"
+  ],
+  "encoding": "utf-8",
+  "selector": "source.lua",
+  "variants": [
+    {
+      "name": "lua(外部调用)",
+      "shell_cmd": "start cmd /c \"chcp 65001 & \"W:/CPS/bin/lua/lua-5.4.2_Win64_bin/lua54.exe\" $file & timeout /t 10\""
+    },
+    {
+      "name": "lua format by stylua",
+      "cmd": [
+        "W:/CPS/bin/lua/stylua.exe",
+        "--config-path",
+        "W:/CPS/bin/lua/stylua.config.toml",
+        "${file}"
+      ],
+    },
+  ]
+}

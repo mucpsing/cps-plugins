@@ -9,9 +9,14 @@
   "selector": "source.python",
   "variants": [
     {
-      "name": "python(output side)",
-      "shell_cmd": "start cmd /c \"chcp 65001 & python ${file} & timeout /t 10 \""
+      "name": "python275_32(外部调用)",
+      "shell_cmd": "start cmd /c \"chcp 65001 & W:/CPS/python/Python27_32/python.exe ${file} & timeout /t 10 \""
     },
+    {
+      "name": "python275_32(内部调用)",
+      "cmd": ["poetry","run","W:/CPS/python/Python27_32/python.exe", "${file}"],
+    },
+
     {
       "name": "poetry run (内部调用)",
       "cmd": ["poetry","run","python", "${file}"],
@@ -20,6 +25,7 @@
       "name": "poetry run (外部调用)",
       "shell_cmd": "start cmd /c \"poetry run python ${file} & timeout /t 10\""
     },
+
     {
       "name": "pdm run (内部调用)",
       "cmd": ["pdm","run","python", "${file}"],
@@ -28,6 +34,16 @@
       "name": "pdm run (外部调用)",
       "shell_cmd": "start cmd /c \"pdm run python ${file} & timeout /t 10\""
     },
+
+    {
+      "name": "uv run (内部调用)",
+      "cmd": ["uv","run","${file}"],
+    },
+    {
+      "name": "uv run (外部调用)",
+      "shell_cmd": "start cmd /c \"uv run ${file} & timeout /t 10\""
+    },
+
     {
       "name": "ArcGIS Python2.7-inside",
       "cmd": ["C:/Python27/ArcGIS10.2/python.exe","${file}"]

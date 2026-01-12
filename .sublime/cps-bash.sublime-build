@@ -1,0 +1,16 @@
+{
+  "cmd": ["$file"],
+  "file_regex": "^[ ]*File \"(...*?)\",line ([0-9]*)",
+  "env": {
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "file_patterns": ["*.bat"],
+  "encoding": "utf-8",
+  "selector": "source.batch",
+  "variants": [
+    {
+      "name": "run in CMD with window",
+      "shell_cmd": "start cmd /c ${file}"
+    },
+  ]
+}

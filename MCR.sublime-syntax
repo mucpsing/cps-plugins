@@ -1,0 +1,24 @@
+%YAML 1.2
+---
+name: MCR
+file_extensions: [mcr]
+scope: source.mcr
+
+contexts:
+  main:
+    - match: ^#!MC.*
+      scope: comment.block.mcr.header
+    - match: ^#.*
+      scope: comment.line.mcr
+    - match: \$!\w+
+      scope: keyword.control.mcr
+    - match: \b(ALTERDATA|OPENLAYOUT|EXPORTSETUP|EXPORT|REDRAWALL|LOOP|ENDLOOP|FILESLOOP|ENDFILESLOOP|IF|ELSE|ENDIF)\b
+      scope: support.function.mcr
+    - match: \b(DATAFILE|EXPORTFORMAT|EXPORTFNAME|EXPORTREGION|FILENAMEPATTERN)\b
+      scope: variable.parameter.mcr
+    - match: &\w+
+      scope: variable.language.mcr
+    - match: '"([^"]*)"'
+      scope: string.quoted.double.mcr
+    - match: "'([^']*)'"
+      scope: string.quoted.single.mcr
